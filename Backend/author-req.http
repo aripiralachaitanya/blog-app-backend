@@ -1,0 +1,48 @@
+### Author Login
+POST http://localhost:4000/auth/login
+Content-Type: application/json
+
+{
+  "email":"sandeep@gmail.com",
+  "password":"Sandy"
+
+}
+
+### Author Logout
+GET http://localhost:4000/auth/logout
+
+
+### Create new article
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author":"69b3c6cdef41dab26bad762d",
+    "title":"Article-1 by Author 1",
+    "category":"Programming",
+    "content":"test article on programming"
+}
+
+### Read own articles
+GET http://localhost:4000/author-api/articles
+
+
+### Update article by Author
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "articleId":"69b3c78334f694221cb5f663",
+    "title":"Article-2 by Author 3",
+    "category":"AI",
+    "content":"test article on AI and its updated"
+}
+
+### Deleter article by Article ID (soft delete)
+PATCH http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+  "articleId":"69b3c78334f694221cb5f663",
+  "isActive":false
+}
